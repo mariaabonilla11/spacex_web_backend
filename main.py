@@ -25,6 +25,10 @@ app.add_middleware(
 # Incluir las rutas
 app.include_router(launches.router, prefix="/api/v1", tags=["launches"])
 
-@app.get("/")
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy"}
+
+@app.get("/api")
 async def root():
     return {"message": "SpaceX Launches API - Bienvenido!"}

@@ -20,8 +20,6 @@ class LaunchResponse(BaseModel):
     details: Optional[str] = Field(None, description="Detalles adicionales")
     flight_number: Optional[int] = Field(None, description="Número de vuelo")
     launch_site: Optional[str] = Field(None, description="Sitio de lanzamiento")
-    created_at: Optional[datetime] = Field(None, description="Fecha de creación (puede ser None si no existe en la fuente de datos)")
-    updated_at: Optional[datetime] = Field(None, description="Fecha de actualización (puede venir de last_updated en DynamoDB)")
     
     class Config:
         json_encoders = {

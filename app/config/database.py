@@ -13,7 +13,7 @@ class Settings:
         self.aws_access_key_id = os.getenv('AWS_ACCESS_KEY_ID')
         self.aws_secret_access_key = os.getenv('AWS_SECRET_ACCESS_KEY')
         self.aws_region = os.getenv('AWS_REGION', 'us-east-1')
-        self.dynamodb_table_name = os.getenv('DYNAMODB_TABLE_NAME', 'spacex_launches')
+        self.dynamodb_table_name = os.getenv('DYNAMODB_TABLE_NAME', 'spacex-launches-dev')
         self.dynamodb_endpoint_url = os.getenv('DYNAMODB_ENDPOINT_URL')
         self.environment = os.getenv('ENVIRONMENT', 'development')
         self.debug = os.getenv('DEBUG', 'true').lower() == 'true'
