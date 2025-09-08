@@ -370,9 +370,6 @@ pytest --cov=app --cov-report=html tests/
    - Confirmar mocks de DynamoDB
    - Validar variables de entorno de test
 
-## Licencia
-
-Este proyecto está bajo la Licencia MIT.
 
 ## Autor
 
