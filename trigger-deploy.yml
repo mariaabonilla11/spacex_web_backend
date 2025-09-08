@@ -1,0 +1,22 @@
+# Archivo para el repo frontend: .github/workflows/trigger-deploy.yml
+name: Trigger Main Deployment
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  trigger-deploy:
+    name: Trigger Main Repo Deployment
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Trigger deployment in main repo
+        run: |
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/mariaabonilla11/spacex_web_fullstack/dispatches \
+            -d '{"event_type":"deploy-trigger","client_payload":{"repo":"frontend","commit":"${{ github.sha }}"}}'
+          
+          echo "Deployment triggered in main repo from frontend changes"
