@@ -10,7 +10,10 @@ logger = logging.getLogger(__name__)
 app = FastAPI(
     title="SpaceX Launches API",
     description="API para consultar lanzamientos espaciales de SpaceX desde DynamoDB",
-    version="1.0.0"
+    version="1.0.0",
+    docs_url="/api/v1/docs",  # Cambia la ruta de Swagger UI
+    redoc_url="/api/v1/redoc",  # Cambia la ruta de ReDoc
+    openapi_url="/api/v1/openapi.json"  # Cambia la ruta del esquema OpenAPI
 )
 
 # Configurar CORS para permitir conexiones desde el frontend
